@@ -43,41 +43,46 @@ class _HomeScreenState extends State<HomeScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      bottomNavigationBar: SizedBox(
+      body: menu[indexMenu]["fragment"] as Widget,
+      bottomNavigationBar: Padding(
+        padding: const EdgeInsets.symmetric(horizontal: 30),
         child: Row(
-          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
           children: List.generate(
             menu.length,
             (index) {
               Map item = menu[index];
               bool isActive = indexMenu == index;
-              return InkWell(
-                onTap: () {},
-                child: SizedBox(
-                  height: 60,
-                  width: 60,
-                  child: Column(
-                    mainAxisSize: MainAxisSize.min,
-                    children: [
-                      const Gap(16),
-                      ImageIcon(
-                        AssetImage(
-                          item[isActive ? "icon_active" : "icon"],
-                        ),
-                        size: 24,
-                        color: Color(isActive ? 0xffC67C4E : 0xffA2A2A2),
-                      ),
-                      if (isActive) const Gap(6),
-                      if (isActive)
-                        Container(
-                          height: 5,
-                          width: 10,
-                          decoration: BoxDecoration(
-                            color: const Color(0xffC67C4E),
-                            borderRadius: BorderRadius.circular(18),
+              return Expanded(
+                child: InkWell(
+                  onTap: () {
+                    indexMenu = index;
+                    setState(() {});
+                  },
+                  child: SizedBox(
+                    height: 70,
+                    child: Column(
+                      mainAxisSize: MainAxisSize.min,
+                      children: [
+                        const Gap(20),
+                        ImageIcon(
+                          AssetImage(
+                            item[isActive ? "icon_active" : "icon"],
                           ),
+                          size: 24,
+                          color: Color(isActive ? 0xffC67C4E : 0xffA2A2A2),
                         ),
-                    ],
+                        if (isActive) const Gap(6),
+                        if (isActive)
+                          Container(
+                            height: 5,
+                            width: 10,
+                            decoration: BoxDecoration(
+                              color: const Color(0xffC67C4E),
+                              borderRadius: BorderRadius.circular(18),
+                            ),
+                          ),
+                      ],
+                    ),
                   ),
                 ),
               );
