@@ -13,27 +13,27 @@ class _HomeScreenState extends State<HomeScreen> {
   int indexMenu = 0;
   final menu = [
     {
-      "icon": "assets/icons/homeIcon/Home_Outlined.png",
-      "icon_active": "assets/icons/homeIcon/Home.png",
+      "icon": "assets/icons/Home_Outlined.png",
+      "icon_active": "assets/icons/Home.png",
       "fragment": const HomeFragment(),
     },
     {
-      "icon": "assets/icons/favoritesIcon/Heart.png",
-      "icon_active": "assets/icons/favoritesIcon/Heart.png",
+      "icon": "assets/icons/Heart.png",
+      "icon_active": "assets/icons/Heart.png",
       "fragment": const Center(
         child: Text("Favorite"),
       ),
     },
     {
-      "icon": "assets/icons/sepetIcon/shoppingBag.png",
-      "icon_active": "assets/icons/sepetIcon/shoppingBag.png",
+      "icon": "assets/icons/shoppingBag.png",
+      "icon_active": "assets/icons/shoppingBag.png",
       "fragment": const Center(
         child: Text("Bag"),
       ),
     },
     {
-      "icon": "assets/icons/notificationsIcon/Notification.png",
-      "icon_active": "assets/icons/notificationsIcon/Notification.png",
+      "icon": "assets/icons/Notification.png",
+      "icon_active": "assets/icons/Notification.png",
       "fragment": const Center(
         child: Text("Notification"),
       ),
